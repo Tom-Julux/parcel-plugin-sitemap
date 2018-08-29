@@ -1,4 +1,4 @@
-[![Travis CI](https://travis-ci.org/tom-julux/parcel-plugin-sitemap.svg?branch=master)](https://travis-ci.org/tom-julux/parcel-plugin-sitemap)
+[![Travis CI](https://travis-ci.org/tom-julux/parcel-plugin-sitemap.svg?branch=master)](https://travis-ci.org/tom-julux/parcel-plugin-sitemap) [![Greenkeeper badge](https://badges.greenkeeper.io/tom-julux/parcel-plugin-sitemap.svg)](https://greenkeeper.io/)
 
 # parcel-plugin-sitemap
 
