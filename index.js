@@ -23,6 +23,6 @@ module.exports = bundler => {
                 )}</loc></url>`
         )}</urlset>`;
 
-        await writeFile(path.resolve(outDir, "sitemap.xml"), sitemap);
+        await writeFile(path.join(outDir, "sitemap.xml"), sitemap);
     });
 };

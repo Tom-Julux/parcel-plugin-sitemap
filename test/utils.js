@@ -4,7 +4,7 @@ const Plugin = require("..");
 
 async function bundle(input) {
     const bundler = new Bundler(input, {
-        outDir: path.join(__dirname, "dist"),
+        outDir: path.join(__dirname, "dist/"),
         watch: false,
         cache: false,
         hmr: false,

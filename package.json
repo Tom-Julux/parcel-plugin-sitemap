@@ -20,7 +20,7 @@
     "license": "MIT",
     "author": {
         "name": "Tom Julux",
-        "url": "https://github.com/tom-juluxs"
+        "url": "https://github.com/tom-julux"
     },
     "dependencies": {
         "fast-glob": "^2.2.2"
