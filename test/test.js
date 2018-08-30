@@ -8,7 +8,7 @@ describe("sitemap", function() {
     it("should create a sitemap", async function() {
         try {
             await bundle(__dirname + "/integration/index.html");
-            await sleep(3000); // Wait for sitemap generation...
+            await sleep(1000); // Wait for sitemap generation...
             let sitemap = await readFile(__dirname + "/dist/sitemap.xml", "utf8");
             assert.equal(
                 sitemap,
