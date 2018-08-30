@@ -1,12 +1,12 @@
 [![Travis CI](https://travis-ci.org/tom-julux/parcel-plugin-sitemap.svg?branch=master)](https://travis-ci.org/tom-julux/parcel-plugin-sitemap)
 
-# parcel-plugin-sitemap
+# Parcel Sitemap Plugin
 
-A parcel plugin for creating basic sitemaps.
+A [Parcel](https://github.com/parcel-bundler/parcel) plugin for creating basic sitemaps.
 
 ### Disclaimer:
 
-This plugin will not create a fully featured sitemap, but the most basic, but still valid one. Parcel makes it easy for you to create an sitemap manually, as html files keep their names, while beeing processed. So if you want to achive perfect SEO optimisation you should not use this plugin, but create a sidemap manually.
+This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one,that is still valid. Parcel makes it easy for you to create an sitemap manually, as html files keep their names, while beeing processed. So if you want to achive perfect SEO optimisation you should not use this plugin, but create a sidemap manually.
 
 **However**, if you, just want to make shure to have all pages listed, so that a search-engines can list them, this plugin has you covert.
 
