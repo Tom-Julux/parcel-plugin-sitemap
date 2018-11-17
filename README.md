@@ -1,9 +1,25 @@
-[![Travis CI](https://travis-ci.org/tom-julux/parcel-plugin-sitemap.svg?branch=master)](https://travis-ci.org/tom-julux/parcel-plugin-sitemap) [![Greenkeeper badge](https://badges.greenkeeper.io/tom-julux/parcel-plugin-sitemap.svg)](https://greenkeeper.io/)
+# Parcel Sitemap Plugin (with `excluded` option)
 
-# Parcel Sitemap Plugin
+Fork of [parcel-plugin-sitemap](https://github.com/parcel-bundler/parcel), a plugin for creating basic sitemaps.  
 
-A [Parcel](https://github.com/parcel-bundler/parcel) plugin for creating basic sitemaps.
-
+Added the functionality to exclude HTML files from being added to the sitemap by specifying globs in the package.json field.  
+The glob(s) will be negated and passed to [fast-glob](https://www.npmjs.com/package/fast-glob) under the hood.  
+```json
+"sitemap": {
+    "siteURL": "https://www.example.org/",
+    "excluded": "static/**/*"
+}
+```  
+or an Array of globs:  
+```json
+"sitemap": {
+    "siteURL": "https://www.example.org/",
+    "excluded": [
+        "static/**/*",
+        "exclude.html"
+    ]
+}
+```
 ### Disclaimer:
 
 This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it easy for you to create an sitemap manually, as html files keep their names, while beeing processed. So if you want to achive perfect SEO optimisation you should not use this plugin, but create a sidemap manually.
@@ -13,13 +29,13 @@ This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/
 ## Installation
 
 ```bash
-yarn add parcel-plugin-sitemap
+yarn add parcel-plugin-sitemap-exclude
 ```
 
 or
 
 ```bash
-npm install parcel-plugin-sitemap
+npm install parcel-plugin-sitemap-exclude
 ```
 
 ## Usage
