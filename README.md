@@ -7,14 +7,14 @@ The glob(s) will be negated and passed to [fast-glob](https://www.npmjs.com/pack
 ```json
 "sitemap": {
     "siteURL": "https://www.example.org/",
-    "excluded": "static/**/*"
+    "exclude": "static/**/*"
 }
 ```  
 or an Array of globs:  
 ```json
 "sitemap": {
     "siteURL": "https://www.example.org/",
-    "excluded": [
+    "exclude": [
         "static/**/*",
         "exclude.html"
     ]
