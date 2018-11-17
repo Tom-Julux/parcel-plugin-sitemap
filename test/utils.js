@@ -1,5 +1,7 @@
 const Bundler = require("parcel-bundler");
 const path = require("path");
+const { promisify } = require("util");
+const writeFile = promisify(require("fs").writeFile);
 const Plugin = require("..");
 
 async function bundle(input) {
@@ -14,6 +16,12 @@ async function bundle(input) {
     await Plugin(bundler);
     return await bundler.bundle();
 }
+
+exports.mockPkg = pkg => writeFile(
+    path.resolve(__dirname, "integration", "package.json"),
+    JSON.stringify(pkg, null, 2),
+    "utf-8"
+);
 
 exports.bundle = bundle;
 exports.sleep = n => new Promise(resolve => setTimeout(resolve, n));
