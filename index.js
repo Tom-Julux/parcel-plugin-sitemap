@@ -30,14 +30,13 @@ module.exports = bundler => {
             exclude.forEach(glob => htmlGlobs.push('!' + outDir + '/' + glob));
         }
 
+        const createLocationTag = url => `<url><loc>${options.siteURL}${
+            path.relative(outDir, url)}</loc></url>`;
+
         let htmlFiles = await glob.async(htmlGlobs);
-        let sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${htmlFiles.map(
-            url =>
-                `<url><loc>${options.siteURL}${path.relative(
-                    outDir,
-                    url
-                )}</loc></url>`
-        )}</urlset>`;
+        let sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${htmlFiles
+            .sort() // keep order stable, mainly to allow for reliable testing
+            .map(createLocationTag)}</urlset>`;
 
         await writeFile(path.join(outDir, "sitemap.xml"), sitemap);
     });

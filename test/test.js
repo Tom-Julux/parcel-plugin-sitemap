@@ -19,7 +19,7 @@ describe("sitemap", function () {
 
             assert.strictEqual(
                 sitemap,
-                '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/exclude.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url>,<url><loc>https://www.example.org/dir/subdir.html</loc></url></urlset>',
+                '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url>,<url><loc>https://www.example.org/exclude.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
                 ''
             );
         } finally {
@@ -43,7 +43,7 @@ describe("sitemap", function () {
 
             assert.strictEqual(
                 sitemap,
-                '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/other.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/dir/subdir.html</loc></url></urlset>',
+                '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
                 ''
             );
         } finally {
