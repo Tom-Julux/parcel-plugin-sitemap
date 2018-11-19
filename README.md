@@ -24,7 +24,7 @@ or an Array of globs:
 
 This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it easy for you to create a sitemap manually, as html files keep their names while beeing processed. So if you want to achive perfect SEO optimization you should not use this plugin but create a sidemap manually.
 
-**However**, if you just want to make sure all pages are listed so that a search engines can crawl them, this plugin has you covered.
+**However**, if you just want to make sure all pages are listed so that search engines can crawl them, this plugin has you covered.
 
 ## Installation
 
