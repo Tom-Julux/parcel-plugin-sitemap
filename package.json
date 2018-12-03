@@ -1,5 +1,5 @@
 {
-    "name": "parcel-plugin-sitemap",
+    "name": "parcel-plugin-sitemap-exclude",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -8,20 +8,27 @@
     "keywords": [
         "parcel",
         "plugin",
-        "sitemap"
+        "sitemap",
+        "exclude"
     ],
     "files": [
         "index.js"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/tom-julux/parcel-plugin-sitemap"
+        "url": "https://github.com/jonaskuske/parcel-plugin-sitemap-exclude"
     },
     "license": "MIT",
-    "author": {
-        "name": "Tom Julux",
-        "url": "https://github.com/tom-julux"
-    },
+    "authors": [
+        {
+            "name": "Tom Julux",
+            "url": "https://github.com/tom-julux"
+        },
+        {
+            "name": "Jonas Kuske",
+            "url": "https://github.com/jonaskuske"
+        }
+    ],
     "dependencies": {
         "fast-glob": "^2.2.2"
     },
