@@ -1,6 +1,6 @@
 {
-    "name": "parcel-plugin-sitemap-exclude",
-    "version": "1.0.0",
+    "name": "parcel-plugin-sitemap",
+    "version": "2.0.0",
     "main": "index.js",
     "scripts": {
         "test": "mocha --timeout 50000"
@@ -16,7 +16,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonaskuske/parcel-plugin-sitemap-exclude"
+        "url": "https://github.com/tom-julux/parcel-plugin-sitemap"
     },
     "license": "MIT",
     "authors": [
