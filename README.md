@@ -4,7 +4,7 @@ A [parcel](https://github.com/parcel-bundler/parcel) plugin for creating (very) 
 
 ### Disclaimer:
 
-This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it easy for you to create a sitemap manually, as html files keep their names while beeing processed. So if you want to achive perfect SEO optimization you should not use this plugin but create a sidemap manually.
+This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it easy for you to create a sitemap manually, as html files keep their names while beeing processed. So if you want to achieve perfect SEO optimization you should not use this plugin but create a sitemap manually.
 
 **However**, if you just want to make sure all pages are listed so that search engines can crawl them, this plugin has you covered.
 
@@ -33,7 +33,7 @@ Add the following snippet to your `package.json` file and replace "https://www.e
 ### Excluding
 Files can be excluded from being added to the sitemap by specifying globs in the respective package.json field.
 The glob(s) will be negated and passed to [fast-glob](https://www.npmjs.com/package/fast-glob) under the hood.
-```json
+```json5
 "sitemap": {
     "siteURL": "https://www.example.org/",
     "exclude": "static/**/*",
