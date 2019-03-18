@@ -4,17 +4,11 @@ A [parcel](https://github.com/parcel-bundler/parcel) plugin for creating (very) 
 
 ### Disclaimer:
 
-This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it easy for you to create a sitemap manually, as html files keep their names while beeing processed. So if you want to achieve perfect SEO optimization you should not use this plugin but create a sitemap manually.
+This plugin will not create a fully featured [sitemap](https://www.sitemaps.org/protocol.html), but the most basic one, that is still valid. Parcel makes it generally very easy for you to create a sitemap manually, as html files keep their names while beeing processed. So **if you want to achieve perfect SEO optimization you should not use this plugin** but create a sitemap manually.
 
-**However**, if you just want to make sure all pages are listed so that search engines can crawl them, this plugin has you covered.
+*However*, if you just want to make sure all pages are listed so that search engines can crawl them, this plugin has you covered.
 
 ## Installation
-
-```bash
-yarn add parcel-plugin-sitemap
-```
-
-or
 
 ```bash
 npm install parcel-plugin-sitemap
@@ -43,6 +37,14 @@ The glob(s) will be negated and passed to [fast-glob](https://www.npmjs.com/pack
         "exclude.html"
     ]
 }
+```
+
+### Timing (using with a prerenderer)
+
+In certain cases the sitemap generation should wait until a prerenderer has finished execution. This is a timing issue, that is out of scope for this project. You should wait until the parcel process has exited and then use another tool or script to build your sitemap. I. E. if your sitemap tool is called "sitemap-generator" you should modify your build-command to read somthing similar to
+
+```bash
+npm run build && sitemap-generator
 ```
 
 ## License
