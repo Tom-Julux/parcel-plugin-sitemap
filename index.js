@@ -3,38 +3,42 @@ const { promisify } = require("util");
 const writeFile = promisify(require("fs").writeFile);
 const glob = require("fast-glob");
 
+const getConfig = async (bundle, packageKey) =>
+    await bundle.entryAsset.getConfig([], { packageKey });
+
 module.exports = bundler => {
     bundler.on("bundled", async bundle => {
         const { outDir } = bundler.options;
-        const options = await bundle.entryAsset.getConfig([], {
-            packageKey: "sitemap"
-        });
+        const options = (await getConfig(bundle, "sitemap")) || {};
+        const siteURL =
+            options.siteURL || (await getConfig(bundle, "homepage"));
 
-        if (!options || !options.siteURL) {
+        if (!siteURL) {
             return console.error(
                 'parcel-plugin-sitemap: You need to specify a "sitemap.siteURL" option in your package.json file. For example "https://example.org/"'
             );
         }
 
+        let exclude = options.exclude;
+
         const htmlGlobs = [outDir + "/**/*.html"];
 
-        if (options.exclude) {
-            let { exclude } = options;
+        if (exclude) {
             if (!Array.isArray(exclude)) exclude = [exclude];
 
-            if (exclude.some(s => typeof s !== 'string')) {
+            if (exclude.some(s => typeof s !== "string")) {
                 return console.error(
                     'parcel-plugin-sitemap: "sitemap.exclude" has to be a string or an Array of strings in glob format.'
                 );
             }
-            exclude.forEach(glob => htmlGlobs.push('!' + outDir + '/' + glob));
+            exclude.forEach(glob => htmlGlobs.push("!" + outDir + "/" + glob));
         }
 
-        const createLocationTag = url => `<url><loc>${options.siteURL}${
-            path.relative(outDir, url)}</loc></url>`;
+        const createLocationTag = url =>
+            `<url><loc>${siteURL}${path.relative(outDir, url)}</loc></url>`;
 
-        let htmlFiles = await glob.async(htmlGlobs);
-        let sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${htmlFiles
+        const htmlFiles = await glob.async(htmlGlobs);
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${htmlFiles
             .sort() // keep order stable, mainly to allow for reliable testing
             .map(createLocationTag)}</urlset>`;
 

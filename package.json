@@ -30,11 +30,11 @@
         }
     ],
     "dependencies": {
-        "fast-glob": "^2.2.6"
+        "fast-glob": "^2.2.7"
     },
     "devDependencies": {
         "ava": "^2.0.0",
-        "parcel-bundler": "^1.12.2",
+        "parcel-bundler": "^1.12.3",
         "rimraf": "^2.6.3"
     }
 }
