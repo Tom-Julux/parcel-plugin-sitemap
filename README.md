@@ -19,8 +19,18 @@ npm install parcel-plugin-sitemap
 Add the following snippet to your `package.json` file and replace "https://www.example.org/" with the location where your site will be hosted:
 
 ```json
-"sitemap": {
-    "siteURL": "https://www.example.org/"
+{
+    "sitemap": {
+        "siteURL": "https://www.example.org/"
+    }
+}
+```
+
+Alternatively the `homepage` key can be used as a comfort options:
+
+```json
+{
+    "homepage": "https://www.example.org/"
 }
 ```
 
