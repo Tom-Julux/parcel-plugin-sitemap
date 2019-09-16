@@ -30,7 +30,7 @@
         }
     ],
     "dependencies": {
-        "fast-glob": "^3.0.0"
+        "fast-glob": "^3.0.4"
     },
     "devDependencies": {
         "ava": "^2.0.0",
