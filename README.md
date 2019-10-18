@@ -51,7 +51,7 @@ The glob(s) will be negated and passed to [fast-glob](https://www.npmjs.com/pack
 
 ### Timing (using with a prerenderer)
 
-In certain cases the sitemap generation should wait until a prerenderer has finished execution. This is a timing issue, that is out of scope for this project. You should wait until the parcel process has exited and then use another tool or script to build your sitemap. I. E. if your sitemap tool is called "sitemap-generator" you should modify your build-command to read somthing similar to
+In certain cases the sitemap generation should wait until a prerenderer has finished execution. This is a timing issue, that is out of scope for this project. You should wait until the parcel process has exited and then use another tool or script to build your sitemap. So if your sitemap tool is called "sitemap-generator" you should modify your build-command to read somthing similar to
 
 ```bash
 npm run build && sitemap-generator
