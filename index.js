@@ -37,7 +37,7 @@ module.exports = bundler => {
         const createLocationTag = url =>
             `<url><loc>${siteURL}${path.relative(outDir, url)}</loc></url>`;
 
-        const htmlFiles = await glob.async(htmlGlobs);
+        const htmlFiles = await glob(htmlGlobs);
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${htmlFiles
             .sort() // keep order stable, mainly to allow for reliable testing
             .map(createLocationTag)}</urlset>`;
