@@ -19,7 +19,7 @@ test.serial("should create a sitemap", async t => {
 
         t.is(
             sitemap,
-            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url>,<url><loc>https://www.example.org/exclude.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
+            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url><url><loc>https://www.example.org/exclude.html</loc></url><url><loc>https://www.example.org/index.html</loc></url><url><loc>https://www.example.org/other.html</loc></url></urlset>',
             ""
         );
     } finally {
@@ -40,7 +40,7 @@ test.serial("should use homepage key as alternative", async t => {
 
         t.is(
             sitemap,
-            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url>,<url><loc>https://www.example.org/exclude.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
+            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url><url><loc>https://www.example.org/exclude.html</loc></url><url><loc>https://www.example.org/index.html</loc></url><url><loc>https://www.example.org/other.html</loc></url></urlset>',
             ""
         );
     } finally {
@@ -64,7 +64,7 @@ test.serial("should exclude glob in sitemap.exclude", async t => {
 
         t.is(
             sitemap,
-            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url>,<url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
+            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/dir/subdir.html</loc></url><url><loc>https://www.example.org/index.html</loc></url><url><loc>https://www.example.org/other.html</loc></url></urlset>',
             ""
         );
     } finally {
@@ -88,7 +88,7 @@ test.serial("should exclude globs[] in sitemap.exclude", async t => {
 
         t.is(
             sitemap,
-            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/index.html</loc></url>,<url><loc>https://www.example.org/other.html</loc></url></urlset>',
+            '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.example.org/index.html</loc></url><url><loc>https://www.example.org/other.html</loc></url></urlset>',
             ""
         );
     } finally {
