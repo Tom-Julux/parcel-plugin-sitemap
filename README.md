@@ -1,3 +1,7 @@
+# Deprecated
+
+I have no intend to further develop this and especially not to be compatible with Parcel 2. As stated in the Disclaimer you can easily create a better sidemap by hand (and should do so). I deprecated the npm package and will delete it in a about a year or once it reaches 0 downloads per week.
+
 # Parcel Sitemap Plugin
 
 A [parcel](https://github.com/parcel-bundler/parcel) plugin for creating (very) basic sitemaps.
